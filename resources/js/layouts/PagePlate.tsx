@@ -1,5 +1,6 @@
 import FooterMain from "@/features/footer/FooterMain";
 import HeaderMain from "@/features/header/HeaderMain";
+import ThemeProvider from "@/features/shadcn/ThemeProvider";
 import { PAGE_PLATE_PROPS } from "@/types/pageplates/types";
 import { Head } from '@inertiajs/react';
 
@@ -43,27 +44,29 @@ export default function PagePlate({
       <meta name="description" content={description?.description || ""} />
       {/* Add other SEO meta tags based on description prop as needed */}
     </Head>
-    <div className="relative min-h-screen flex flex-col">
-      {clean?"":<>
-        {noHeader ? "":<>
-          <HeaderMain />
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <div className="relative min-h-screen flex flex-col">
+        {clean?"":<>
+          {noHeader ? "":<>
+            <HeaderMain />
+          </>}
         </>}
-      </>}
-      <slot name="header" />
 
-      {noContainer ?<>
-        {children}
-      </>:<>
-        <div className={`relative`} style={{minHeight: expectedHeight}}>
+        {noContainer ?<>
           {children}
-        </div>
-      </>}
-
-      {clean?"": <>
-        {noFooter ? "":<>
-          <FooterMain />
+        </>:<>
+          <div className={`relative container`} style={{minHeight: expectedHeight}}>
+            {children}
+          </div>
         </>}
-      </>}
-    </div>
+
+        {clean?"": <>
+          {noFooter ? "":<>
+            <FooterMain />
+          </>}
+        </>}
+      </div>
+    </ThemeProvider>
+    
   </>
 }

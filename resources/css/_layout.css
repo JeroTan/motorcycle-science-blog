@@ -1,0 +1,7 @@
+.container {
+	@apply w-full;
+	max-width: 92rem;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 0.5rem 0 0.5rem;
+}
