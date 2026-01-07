@@ -28,6 +28,7 @@
     },
     "dependencies": {
         "@inertiajs/react": "^2.1.0",
+        "@jsarmyknife/native--math": "^0.1.17-beta.0",
         "@radix-ui/react-dialog": "^1.1.15",
         "@radix-ui/react-separator": "^1.1.8",
         "@radix-ui/react-slot": "^1.2.4",

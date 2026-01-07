@@ -1,6 +1,5 @@
 import PagePlate from '@/layouts/PagePlate';
 import {blogItemMeta} from '@/content/meta';
-import { Fragment } from 'react/jsx-runtime';
 import Item from '@/components/listing/Item';
 export default function Welcome() {
 	return (

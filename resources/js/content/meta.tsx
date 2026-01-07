@@ -15,3 +15,15 @@ export const blogItemMeta: ItemBlogProps[] = [
     image: "/images/articles/2026/01/chopper-with-long-rake.jpg",
   }
 ];
+
+export function blogMetaSearchWithId(id: string): ItemBlogProps | null {
+  return blogItemMeta.find(item => item.id === id) || null;
+}
+
+export function blogMetaSearchWithIdForce(id: string): ItemBlogProps {
+  const item = blogItemMeta.find(item => item.id === id);
+  if (!item) {
+    throw new Error(`Blog item with ID ${id} not found.`);
+  }
+  return item;
+}

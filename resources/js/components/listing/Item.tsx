@@ -1,4 +1,5 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
+import { Link } from '@inertiajs/react'
 
 type Props = {
   id: string,
@@ -16,7 +17,7 @@ export default function Item({
   image,
 }: Props) {
   return (
-    <a href={"/blog/"+id} className="block group">
+    <Link href={"/blog/"+id} className="block group">
       <Card className="overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 pt-0">
         {/* Image */}
         <div className="relative aspect-video overflow-hidden bg-muted">
@@ -53,6 +54,6 @@ export default function Item({
           </span>
         </CardFooter>
       </Card>
-    </a>
+    </Link>
   );
 }
